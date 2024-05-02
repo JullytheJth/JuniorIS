@@ -1,0 +1,202 @@
+{%extends "layout.html" %}
+
+{%block body %}
+
+<div style="float:left;display:inline;">
+<form action="/" method="post" style="padding-left:15px;">
+    <div class="dropdown">
+        <div class="menu-eras">Times: Eras</div>
+        <div class="menu-eras-content">
+            <input type="checkbox" {{ "checked='checked'" if 'eoarchean' in era else "" }} name="era" class="checklist" value="eoarchean"><p>Eoarchean</p>
+            <input type="checkbox" {{ "checked='checked'" if 'paleoarchean' in era else "" }} name="era" class="checklist" value="paleoarchean"><p>Paleoarchean</p>
+            <input type="checkbox" {{ "checked='checked'" if 'mmesoarchean' in era else "" }} name="era" class="checklist" value="mesoarchean"><p>Mesoarchean</p>
+            <input type="checkbox" {{ "checked='checked'" if 'neoarchean' in era else "" }} name="era" class="checklist" value="neoarchean"><p>Neoarchean</p>
+            <input type="checkbox" {{ "checked='checked'" if 'paleoproterozoic' in era else "" }} name="era" class="checklist" value="paleoproterozoic"><p>Paleoproterozoic</p>
+            <input type="checkbox" {{ "checked='checked'" if 'mesoproterozoic' in era else "" }} name="era" class="checklist" value="mesoproterozoic"><p>Mesoproterozoic</p>
+            <input type="checkbox" {{ "checked='checked'" if 'neoproterozoic' in era else "" }} name="era" class="checklist" value="neoproterozoic"><p>Neoproterozoic</p>
+            <input type="checkbox" {{ "checked='checked'" if 'paleozoic' in era else "" }} name="era" class="checklist" value="paleozoic"><p>Paleozoic</p>
+            <input type="checkbox" {{ "checked='checked'" if 'mesozoic' in era else "" }} name="era" class="checklist" value="mesozoic"<p>Mesozoic</p>
+            <input type="checkbox" {{ "checked='checked'" if 'cenozoic' in era else "" }} name="era" class="checklist" value="cenozoic"><p>Cenozoic</p>
+        </div>
+    </div>
+
+
+    <!-- Potential code for it geological periods were included as an option along with eras.
+    <div class="dropdown">
+        <div class="menu-periods">Times: Periods</div>
+        <div class="menu-periods-content" style="columns:2;">
+            <input type="checkbox" class="checklist" value="siderian"><p>Siderian</p>
+            <input type="checkbox" class="checklist" value="rhyacian"><p>Rhyacian</p>
+            <input type="checkbox" class="checklist" value="orosirian"><p>Orosirian</p>
+            <input type="checkbox" class="checklist" value="statherian"><p>Statherian</p>
+            <input type="checkbox" class="checklist" value="calymmian"><p>Calymmian</p>
+            <input type="checkbox" class="checklist" value="ecstasian"><p>Ecstasian</p>
+            <input type="checkbox" class="checklist" value="stenian"><p>Stenian</p>
+            <input type="checkbox" class="checklist" value="tonian"><p>Tonian</p>
+            <input type="checkbox" class="checklist" value="cryogenian"><p>Cryogenian</p>
+            <input type="checkbox" class="checklist" value="ediacaran"><p>Ediacaran</p>
+            <input type="checkbox" class="checklist" value="cambrian"><p>Cambrian</p>
+            <input type="checkbox" class="checklist" value="ordovician"><p>Ordovician</p>
+            <input type="checkbox" class="checklist" value="silurian"><p>Silurian</p>
+            <input type="checkbox" class="checklist" value="devonian"><p>Devonian</p>
+            <input type="checkbox" class="checklist" value="carboniferous"><p>Carboniferous</p>
+            <input type="checkbox" class="checklist" value="cermian"><p>Permian</p>
+            <input type="checkbox" class="checklist" value="triassic"><p>Triassic</p>
+            <input type="checkbox" class="checklist" value="jurassic"><p>Jurassic</p>
+            <input type="checkbox" class="checklist" value="cretaceous"><p>Cretaceous</p>
+            <input type="checkbox" class="checklist" value="paleogene"<p>Paleogene</p>
+            <input type="checkbox" class="checklist" value="neogene"><p>Neogene</p>
+            <input type="checkbox" class="checklist" value="quarternary"><p>Quarternary</p>
+        </div>
+    </div>-->
+    
+    <div class="dropdown">
+        <div class="menu-first"><b>First appearances</b></div>
+        <div class="menu-first-content">
+            <input type="checkbox" {{ "checked='checked'" if 'first-life' in first else "" }} name="first" class="checklist" value="first-life"><p>First life</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-animals' in first else "" }} name="first" class="checklist" value="first-animals"><p>First animals</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-fish' in first else "" }} name="first" class="checklist" value="first-fish"><p>First fish</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-land-plants' in first else "" }} name="first" class="checklist" value="first-land-plants"><p>First land plants</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-insects' in first else "" }} name="first" class="checklist" value="first-insects"><p>First insects</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-land-animals' in first else "" }} name="first" class="checklist" value="first-land-animals"><p>First land animals</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-amphibians' in first else "" }} name="first" class="checklist" value="first-amphibians"><p>First amphibians</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-reptiles' in first else "" }} name="first" class="checklist" value="first-reptiles"><p>First reptiles</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-mammals' in first else "" }} name="first" class="checklist" value="first-mammals"><p>First mammals</p>
+            <input type="checkbox" {{ "checked='checked'" if 'first-birds' in first else "" }} name="first" class="checklist" value="first-birds"><p>First birds</p>
+        </div>
+    </div>
+    
+    <div class="dropdown">
+        <div class="menu-extin"><b>Mass extinctions</b></div>
+        <div class="menu-extin-content">
+            <input type="checkbox" {{ "checked='checked'" if 'ord-sil' in extinct else "" }} name="extinct" class="checklist" value="ord-sil"><p>Ordovician-Silurian extinction</p>
+            <input type="checkbox" {{ "checked='checked'" if 'late-dev' in extinct else "" }} name="extinct" class="checklist" value="late-dev"><p>Late Devonian extinction</p>
+            <input type="checkbox" {{ "checked='checked'" if 'perm-tri' in extinct else "" }} name="extinct" class="checklist" value="perm-tri"><p>Permian-Triassic extinction</p>
+            <input type="checkbox" {{ "checked='checked'" if 'tri-jur' in extinct else "" }} name="extinct" class="checklist" value="tri-jur"><p>Triassic-Jurassic extinction</p>
+            <input type="checkbox" {{ "checked='checked'" if 'cret-pal' in extinct else "" }} name="extinct" class="checklist" value="cret-pal"><p>Cretaceous-Paleogene extinction</p>
+            <input type="checkbox" {{ "checked='checked'" if 'holocene' in extinct else "" }} name="extinct" class="checklist" value="holocene"><p>Holocene extinction</p>
+        </div>
+    </div>
+    <input type="submit">
+    </form>
+</div>
+
+<div class="timeline"></div>
+<div class="era-background"></div>
+<div class="period-background"></div>
+
+<div class="text-left"><b>4 b.y.a.</b></div>
+<div class="text-right"><b>Present</b></div>
+
+<!-- Submitted message that only shows after the submit has been used. -->
+<div style="float:left;display:inline;color:#dda0dd;margin-left:18px;margin-top:17px;">{{ status }}</div>
+
+<!-- Small message to viewer showing where to start on th page. Only shows befor the user has used the menus. -->
+{% if intro == 'Select events and geological times from these menus' %}
+<div style="width:0px;height:0px;margin-left:32px;padding-top:10px;color:#ff8c00;clear:left;border-left:5px solid transparent;
+            border-right:5px solid transparent;border-bottom:13px solid #ff8c00;clear:left;"></div>
+{% endif %}
+<div style="margin-left:23px;padding-top:6px;color:#ff8c00;clear:left;">{{ intro }}</div>
+
+<!-- Shows which eras and events the user selected; starts with none shown -->
+<!-- eras -->
+{% if 'eoarchean' in era %}
+<div class="era" title="Eoarchean: 4,000-3,600 m.y.a." style="width:124px;margin-left:-635px;">Eoarchean</div>
+{% endif %}
+{% if 'paleoarchean' in era %}
+<div class="era" title="Paleoarchean: 3,600-3,200 m.y.a." style="width:124px;margin-left:-510px;">Paleoarchean</div>
+{% endif %}
+{% if 'mesoarchean' in era %}
+<div class="era" title="Mesoarchean: 3,200-2,800 m.y.a." style="width:124px;margin-left:-385px;">Mesoarchean</div>
+{% endif %}
+{% if 'neoarchean' in era %}
+<div class="era" title="Neoarchean: 2,800-2,500 m.y.a." style="width:93px;margin-left:-260px;">Neoarchean</div>
+{% endif %}
+{% if 'paleoproterozoic' in era %}
+<div class="era" title="Paleoproterozoic: 2,500-1,600 m.y.a." style="width:280px;margin-left:-166px;">Paleoproterozoic</div>
+{% endif %}
+{% if 'mesoproterozoic' in era %}
+<div class="era" title="Mesoproterozoic: 1,600-1,000 m.y.a." style="width:186px;margin-left:115px;">Mesoproterozoic</div>
+{% endif %}
+{% if 'neoproterozoic' in era %}
+<div class="era" title="Neoproterozoic: 1,000-541 m.y.a." style="width:142px;margin-left:302px;">Neoproterozoic</div>
+{% endif %}
+{% if 'paleozoic' in era %}
+<div class="era" title="Paleozoic: 541-252 m.y.a." style="width:89px;margin-left:445px;">Paleozoic</div>
+{% endif %}
+{% if 'mesozoic' in era %}
+<div class="era" title="Mesozoic: 252-66 m.y.a." style="width:57px;margin-left:535px;"></div>
+{% endif %}
+{% if 'cenozoic' in era %}
+<div class="era" title="Cenozoic: 66-0 m.y.a." style="width:22px;margin-left:593px;border-right:#ffc87c"></div>
+{% endif %}
+
+<!-- first appearances of -->
+{% if 'first-life' in first %}
+<div class="timeline-first-background" title="3.7 billion y.a." style="margin-left:-583px;top:81%;">First Life</div>
+<div class="timeline-first-triangle" title="3.7 billion y.a." style="margin-left:-520px;top:85%;"></div>
+{% endif %}
+{% if 'first-animals' in first %}
+<div class="timeline-first-background" title="800 m.y.a." style="margin-left:292px;top:75%;">First Animals</div>
+<div class="timeline-first-triangle" title="800 m.y.a." style="margin-left:355px;top:79%;"></div>
+{% endif %}
+{% if 'first-fish' in first %}
+<div class="timeline-first-background" title="550 m.y.a." style="margin-left:373px;top:69%;">First Fish</div>
+<div class="timeline-first-triangle" title="550 m.y.a." style="margin-left:436px;top:73%;"></div>
+{% endif %}
+{% if 'first-land-animals' in first %}
+<div class="timeline-first-background" title="500 m.y.a." style="margin-left:389px;top:63%;">First Land Animals</div>
+<div class="timeline-first-triangle" title="500 m.y.a." style="margin-left:452px;top:67%;"></div>
+{% endif %}
+{% if 'first-land-plants' in first %}
+<div class="timeline-first-background" title="470 m.y.a." style="margin-left:398px;top:57%;">First Land Plants</div>
+<div class="timeline-first-triangle" title="470 m.y.a." style="margin-left:461px;top:61%;"></div>
+{% endif %}
+{% if 'first-insects' in first %}
+<div class="timeline-first-background" title="400 m.y.a." style="margin-left:420px;top:51%;">First Insects</div>
+<div class="timeline-first-triangle" title="400 m.y.a." style="margin-left:483px;top:55%;"></div>
+{% endif %}
+{% if 'first-amphibians' in first %}
+<div class="timeline-first-background" title="365 m.y.a." style="margin-left:443px;top:45%;">First Amphibians</div>
+<div class="timeline-first-triangle" title="365 m.y.a." style="margin-left:496px;top:49%;"></div>
+{% endif %}
+{% if 'first-reptiles' in first %}
+<div class="timeline-first-background" title="300 m.y.a." style="margin-left:448px;top:39%;">First Reptiles</div>
+<div class="timeline-first-triangle" title="300 m.y.a." style="margin-left:511px;top:43%;"></div>
+{% endif %}
+{% if 'first-mammals' in first %}
+<div class="timeline-first-background" title="200 m.y.a." style="margin-left:479px;top:33%;">First Mammals</div>
+<div class="timeline-first-triangle" title="200 m.y.a." style="margin-left:542px;top:37%;"></div>
+{% endif %}
+{% if 'first-birds' in first %}
+<div class="timeline-first-background" title="150 m.y.a." style="margin-left:498px;top:27%;">First Birds</div>
+<div class="timeline-first-triangle" title="150 m.y.a." style="margin-left:561px;top:31%;"></div>
+{% endif %}
+
+<!-- mass extinction events -->
+{% if 'ord-sil' in extinct %}
+<div class="timeline-extinct-background" title="439 m.y.a." style="margin-left:378px;top:81%;">Ordovician-Silurian ext.</div>
+<div class="timeline-extinct-triangle" title="439 m.y.a." style="margin-left:468px;top:85%;"></div>
+{% endif %}
+{% if 'late-dev' in extinct %}
+<div class="timeline-extinct-background" title="364 m.y.a." style="margin-left:397px;top:75%;">Late Devonian ext.</div>
+<div class="timeline-extinct-triangle" title="364 m.y.a." style="margin-left:487px;top:79%;"></div>
+{% endif %}
+{% if 'perm-tri' in extinct %}
+<div class="timeline-extinct-background" title="251 m.y.a." style="margin-left:437px;top:69%;">Permian-Triassic ext.</div>
+<div class="timeline-extinct-triangle" title="251 m.y.a." style="margin-left:527px;top:73%;"></div>
+{% endif %}
+{% if 'tri-jur' in extinct %}
+<div class="timeline-extinct-background" title="199-214 m.y.a." style="margin-left:451px;top:63%;">Triassic-Jurassic ext.</div>
+<div class="timeline-extinct-triangle" title="65 m.y.a." style="margin-left:541px;top:67%;"></div>
+{% endif %}
+{% if 'cret-pal' in extinct %}
+<div class="timeline-extinct-background" title="65 m.y.a." style="margin-left:495px;top:57%;">cretaceous-Paleogene ext.</div>
+<div class="timeline-extinct-triangle" title="65 m.y.a." style="margin-left:585px;top:61%;"></div>
+{% endif %}
+{% if 'holocene' in extinct %}
+<div class="timeline-extinct-background" title="present" style="margin-left:515px;top:51%;">Holocene ext.</div>
+<div class="timeline-extinct-triangle" title="present" style="margin-left:605px;top:55%;"></div>
+{% endif %}
+
+{% endblock %}
