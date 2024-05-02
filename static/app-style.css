@@ -1,0 +1,246 @@
+.timeline {
+    height: 17px;
+    background-color: black;
+    background-image: linear-gradient(to right, black, #f0f0f0);
+    position: absolute;
+    top: 90.7%;
+    left: 50%;
+    width: 1250px;
+    margin-left: -635px;
+    margin-right: -615px;
+    z-index: -1;
+}
+
+.era-background {
+    height: 27px;
+    background-color: gray;
+    position: absolute;
+    top: 87.5%;
+    left: 50%;
+    width: 1250px;
+    margin-left: -635px;
+    margin-right: -615px;
+    z-index: -1;
+}
+
+.era {
+    height: 27px;
+    background-color: #ffc87c;
+    position: absolute;
+    top: 87.5%;
+    left: 50%;
+    z-index: 0;
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+
+/*code for adding periods along with the eras
+.period-background {
+    height: 17px;
+    background-color: gray;
+    position: absolute;
+    top: 87.4%;
+    left: 50%;
+    width: 1250px;
+    margin-left: -635px;
+    margin-right: -615px;
+    z-index: -1;
+}
+
+.period {
+    height: 17px;
+    background-color: #ffaf20;
+    position: absolute;
+    top: 87.4%;
+    left: 50%;
+    z-index: 0;
+    border-right: 1px solid black;
+}
+*/
+
+.timeline-first-background {
+    background-color: #dda0dd;
+    height: 30px;
+    width: 160px;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.timeline-first-triangle {
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    border: medium solid #dda0dd;
+    border-width: 10px 10px 0px 10px;
+    border-color: #dda0dd transparent transparent transparent;
+}
+
+.timeline-first-background:hover {
+    z-index: 0;
+}
+
+.timeline-extinct-background {
+    background-color: #9400d3;
+    height: 30px;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.timeline-extinct-triangle {
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    border: medium solid #9400d3;
+    border-width: 10px 10px 0px 10px;
+    border-color: #9400d3 transparent transparent transparent;
+}
+
+.timeline-extinct-background:hover {
+    z-index: 0;
+}
+
+.text-left {
+    position: absolute;
+    top: 88.6%;
+    left: 50%;
+    margin-left: -700px;
+}
+
+.text-right {
+    position: absolute;
+    top: 88.6%;
+    right: 50%;
+    margin-right: -685px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-eras {
+    background-color: #ffa500;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-eras-content {
+    display: none;
+    position: absolute;
+    background-color: #ffc87c;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 16px;
+}
+
+.menu-periods {
+    background-color: #ffa500;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-periods-content {
+    display: none;
+    position: absolute;
+    background-color: #ff8c00;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 16px;
+}
+
+.menu-first {
+    background-color: purple;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-first-content {
+    display: none;
+    position: absolute;
+    background-color: #dda0dd;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 16px;
+}
+
+.menu-extin {
+    background-color: purple;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-extin-content {
+    display: none;
+    position: absolute;
+    background-color: #9400d3;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 16px;
+}
+
+.dropdown:hover .menu-eras-content{
+    display: block;
+}
+
+.dropdown:hover .menu-periods-content{
+    display: block;
+}
+
+.dropdown:hover .menu-first-content{
+    display: block;
+}
+
+.dropdown:hover .menu-extin-content{
+    display: block;
+}
+
+.dropdown:hover .menu-eras {
+    background-color: #ffba3e;
+}
+
+.dropdown:hover .menu-periods {
+    background-color: #ffaf20;
+}
+
+.dropdown:hover .menu-first{
+    background-color: rgb(148,38,148);
+}
+
+.dropdown:hover .menu-extin{
+    background-color: rgb(133,0,169);
+}
+
+.checklist {
+    float: left;
+    padding-right: 8px;
+
+}
+
+input[type=submit]{
+    background-color: #ffc87c;
+    background-image: linear-gradient(to right, #ffc87c, rgb(148,38,148))
+}
